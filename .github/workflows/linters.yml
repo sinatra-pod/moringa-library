@@ -15,6 +15,6 @@ jobs:
         with:
           ruby-version: '3.0.2'
           bundler-cache: false
-      - run: bundle install
+      - run: make api-gem-setup
       - run: make api-lint-fix
       - run: make api-lint-check
