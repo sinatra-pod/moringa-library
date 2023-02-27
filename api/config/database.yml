@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  username: <%= ENV['DEV_DB_USER'] %>
+  password: <%= ENV['DEV_DB_PASSWORD'] %>
+  database: <%= ENV['DEV_DB_NAME'] %>
+
+production:
+  <<: *default
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+
+test:
+  adapter: sqlite3
+  database: db/moringa-lib-test.sqlite3

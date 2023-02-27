@@ -1,0 +1,23 @@
+name: Tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0.2'
+          bundler-cache: false
+      - run: bundle install
+      - run: make api-db-migrate
+      - run: make api-test
+        env:
+          RACK_ENV: test
+          APP_ENV: test

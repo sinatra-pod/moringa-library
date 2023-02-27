@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+
+task :start do
+  exec "rerun -b 'rackup config.ru'"
+end
+
+task :test do
+  exec 'rspec spec/'
+end
+
+# ruby linting
+namespace :lint do
+  task :check do
+    exec 'rubocop'
+  end
+
+  task :fix do
+    exec 'rubocop -a'
+  end
+end
