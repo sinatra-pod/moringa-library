@@ -18,6 +18,3 @@ jobs:
       - run: make api-gem-setup
       - run: export RACK_ENV=test && export APP_ENV=test && make api-db-migrate
       - run: make api-test
-        env:
-          RACK_ENV: test
-          APP_ENV: test
