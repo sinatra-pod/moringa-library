@@ -16,7 +16,7 @@ jobs:
           ruby-version: '3.0.2'
           bundler-cache: false
       - run: make api-gem-setup
-      - run: make api-db-migrate
+      - run: export RACK_ENV=test && export APP_ENV=test && make api-db-migrate
       - run: make api-test
         env:
           RACK_ENV: test
