@@ -1,8 +1,6 @@
 # Moringa Hub
-​
-## Description
-Welcome to Moringa Hub Library.
-This is an application where users can view, showcase and review all kinds of projects, designs and articles that have been made by members of the Moringa ecosystem.
+​Welcome to Moringa Hub!
+This is an application where users can showcase their projects, as well as view and review all kinds of projects, designs and articles that have been made by other members of the Moringa ecosystem.
 ## Setup instructions
 * Clone the repository
     ```
@@ -30,7 +28,7 @@ This is an application where users can view, showcase and review all kinds of pr
 * Github Actions
 * Github Projects
 ## Requirements and Specifications
-* `node v0.9.0`
+*  [![Node:v0.9.0](https://img.shields.io/badge/Node-v0.9.0-blue.svg)]
 * `npm 8.15.0`
 * `ruby 2.7.4`
 
@@ -49,6 +47,7 @@ This is an application where users can view, showcase and review all kinds of pr
 
 ## License
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-Copyright (c) 2023 **Sinatra Pod**
+
+  Copyright (c) 2023 **Sinatra Pod**
 
 
