@@ -28,7 +28,10 @@ This is an application where users can showcase their projects, as well as view 
 * Github Actions
 * Github Projects
 ## Requirements and Specifications
-*  [![Node:v0.9.0](https://img.shields.io/badge/Node-v0.9.0-blue.svg)]
+![node:v0.9.0](https://img.shields.io/badge/node-v0.9.0-blue.svg)
+![npm:v0.9.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
+![ruby:2.7.4](https://img.shields.io/badge/ruby-2.7.4-yellow.svg)
+*  `node v0.9.0`
 * `npm 8.15.0`
 * `ruby 2.7.4`
 
