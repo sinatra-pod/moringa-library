@@ -21,4 +21,22 @@ api-lint-fix:
 
 # @WEBAPP
 
+
 # @DOCKER
+# Build Docker images
+build:
+	docker compose up --build -d --remove-orphans
+
+
+#  Start Docker environment
+start:
+	docker compose up
+
+
+# Stop Docker environment
+stop:
+	docker compose stop
+
+show-logs:
+	docker compose up --build -d --remove-orphans
+
