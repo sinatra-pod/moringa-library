@@ -9,11 +9,17 @@ This is an application where users can view, showcase and review all kinds of pr
     git clone https://github.com/sinatra-pod/moringa-library.git
     ```
 * Navigate to the project folder
-    * ```cd moringa-library```
+    ```
+    cd moringa-library
+    ```
 * To interact with the front-end part of the application, navigate to the webapp folder
-    * ```cd webapp```
+    ```
+    cd webapp
+    ```
 * To interact with the back-end part of the application, navigate to the api folder
-    *  ```cd api```
+    ```
+    cd api
+    ```
 ## Technologies used
 * Ruby
 * Sinatra
