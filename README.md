@@ -1,7 +1,10 @@
 # Moringa Hub
-​Welcome to Moringa Hub!
-This is an application where users can showcase their projects, as well as view and review all kinds of projects, designs and articles that have been made by other members of the Moringa ecosystem.
-## Setup instructions
+
+​Welcome to Moringa Hub, home of Moringa's most awesome projects!
+This is an application where users can showcase their projects,designs and articles; as well as view and review all kinds of other projects, designs and articles that have been made by other members of the Moringa ecosystem.
+
+## Setup Instructions
+
 * Clone the repository
     ```
     git clone https://github.com/sinatra-pod/moringa-library.git
@@ -18,7 +21,8 @@ This is an application where users can showcase their projects, as well as view 
     ```
     cd api
     ```
-## Technologies used
+
+## Technologies Used
 * Ruby
 * Sinatra
 * React
@@ -27,6 +31,7 @@ This is an application where users can showcase their projects, as well as view 
 * Firebase
 * Github Actions
 * Github Projects
+
 ## Requirements and Specifications
 ![node:v0.9.0](https://img.shields.io/badge/node-v0.9.0-blue.svg)
 ![npm:v0.9.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
@@ -35,7 +40,7 @@ This is an application where users can showcase their projects, as well as view 
 * `npm 8.15.0`
 * `ruby 2.7.4`
 
-## Made by
+## Authors
 * [Adera Karume](https://github.com/karume629)
 * [Albert Byrone](https://github.com/Albert-Byrone)
 * [Caleb Kiprotich](https://github.com/Calebbii)
@@ -46,6 +51,19 @@ This is an application where users can showcase their projects, as well as view 
 * [Joseph Wambua](https://github.com/mutuajoseph)
 * [Kelvin Muriithi](https://github.com/KelvinMuriithi)
 * [Titus Muthomi](https://github.com/Kalunge)
+
+## Collaboration Methodology
+
+Based on the Agile Method.
+Planning and tracking of project tasks was done using `Github Projects`.
+Sample steps:
+
+> Check for any tasks assigned to you on the project boards.
+> In your local environment, create a new branch and work on the task assigned to you while on that branch.
+> Push your work to Github
+> Create a pull request and link the ticket issue
+> Update the details and status of that issue on the project boards.
+
 
 
 ## License
