@@ -58,11 +58,11 @@ Based on the Agile Method.
 Planning and tracking of project tasks was done using `Github Projects`.
 Sample steps:
 
-> Check for any tasks assigned to you on the project boards.
-> In your local environment, create a new branch and work on the task assigned to you while on that branch.
-> Push your work to Github
-> Create a pull request and link the ticket issue
-> Update the details and status of that issue on the project boards.
+> - Check for any tasks assigned to you on the project boards.
+> - In your local environment, create a new branch and work on the task assigned to you while on that branch.
+> - Push your work to Github
+> - Create a pull request and link the ticket issue
+> - Update the details and status of that issue on the project boards.
 
 
 
