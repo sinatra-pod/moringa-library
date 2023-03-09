@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Generate firebase.json file'
-        run: 'cp ./.hosting/moringa-library.firebase.json ./firebase.json'
+        run: 'cp ./.hosting/moringa-library.firebase.json ./webapp/firebase.json'
       - name: 'Navigate to the client directory'
         run: 'cd webapp'
       - name: 'Run & Build the client'
