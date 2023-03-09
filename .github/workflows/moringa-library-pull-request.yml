@@ -25,7 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd webapp && npm ci && npm run build
+      - name: 'Generate firebase.json file'
+        run: 'cp ./.hosting/moringa-library.firebase.json ./firebase.json'
+      - name: 'Navigate to the client directory'
+        run: 'cd webapp'
+      - name: 'Run & Build the client'
+        run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
