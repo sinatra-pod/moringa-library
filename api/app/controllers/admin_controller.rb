@@ -3,9 +3,8 @@
 # t.string :email (moringaschool email)
 # t.string :password send password to the users email address ====> post methods
 
-
 post '/admin/create_reviewer' do
-  get the  
+  get the
   name = params[:name]
   email = params[:email]
   password = params[:password]
@@ -16,10 +15,3 @@ post '/admin/create_reviewer' do
   # return the response
   json_response(code: 201, data: { user: reviewer })
 end
-  
-
-
-
-
-
-
