@@ -4,13 +4,37 @@ services:
     build: ./api
     ports:
       - "4567:4567"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - moringa_library
+
   db:
-    image: nouchka/sqlite3:latest
+    image: postgres:12-alpine
+    ports:
+      - "5432:5432"
     volumes:
-      - library_db:/app/db
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    networks:
+      - moringa_library
+
   client:
     build: ./webapp
     ports:
       - "3000:3000"
+    restart: on-failure
+    networks:
+      - moringa_library
+
+networks:
+  moringa_library:
+    driver: bridge
 volumes:
-  library_db:
+  postgres_data:
+
