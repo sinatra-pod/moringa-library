@@ -1,11 +1,12 @@
 # Use a Ruby base image
-FROM ruby:2.7
+FROM ruby:3.0.2
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the container
 COPY Gemfile Gemfile.lock ./
+COPY .ruby-version ./
 
 # Install dependencies
 RUN bundle install
@@ -14,7 +15,7 @@ RUN bundle install
 COPY . .
 
 # Expose the port that the application will run on
-EXPOSE 4567
+EXPOSE 9292
 
 # Start the application
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
+CMD ["rake", "start"]
