@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the container
 COPY Gemfile Gemfile.lock ./
-COPY .ruby-version ./
+COPY .ruby-version  ./
 
 # Install dependencies
 RUN bundle install
@@ -17,5 +17,5 @@ COPY . .
 # Expose the port that the application will run on
 EXPOSE 9292
 
-# Start the application
-CMD ["rake", "start"]
+# Start the application rackup config.r
+CMD ["bundle", "exec", "rackup", "config.ru", "--host", "0.0.0.0", "-p", "9292"]

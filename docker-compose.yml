@@ -3,7 +3,7 @@ services:
   web-api:
     build: ./api
     ports:
-      - "4567:4567"
+      - "9292:9292"
     env_file:
       - .env
     depends_on:
