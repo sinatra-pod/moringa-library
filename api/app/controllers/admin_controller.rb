@@ -1,9 +1,3 @@
-# t.string :name
-# t.string :role, default: "REVIEWER"
-# t.string :email (moringaschool email)
-# t.string :password send password to the users email address ====> post methods
-
-
 post '/admin/create_reviewer' do
   get the  
   name = params[:name]
