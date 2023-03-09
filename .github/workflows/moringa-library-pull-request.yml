@@ -31,7 +31,7 @@ jobs:
         run: cd webapp && npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryoint: ./webapp
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MORINGA_LIBRARY }}'
           projectId: moringa-library
-          path: "./webapp"
