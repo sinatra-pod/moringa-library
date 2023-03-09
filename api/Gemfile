@@ -29,6 +29,7 @@ gem 'rubocop', '~> 1.46', require: false
 group :development do
   gem 'faker'
   gem 'rerun', '~> 0.14.0'
+  gem 'rack-env',  '~> 0.1.3'
 end
 
 group :test do
