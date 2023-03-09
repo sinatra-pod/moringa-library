@@ -4,6 +4,6 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :tech_stacks
   has_many :comments, class_name: "ProjectComment"
 
-  enum submission_status: [:DRAFT, :SUBMITTED, :APPROVED, :REJECTED]
+  enum submission_status: [:IN_REVIEW, :SUBMITTED, :ACCEPTED, :REJECTED :REQUEST_CHANGE]
 
 end
