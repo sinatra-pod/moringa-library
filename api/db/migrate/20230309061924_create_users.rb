@@ -7,8 +7,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :password_hash
       t.integer :primary_tech_stack_id
       t.string :gh_username
-      t.datetime :created_at
-      t.datetime :updated_at
+
+      t.timestamps
     end
   end
 end

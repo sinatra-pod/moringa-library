@@ -13,8 +13,8 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.integer :submitter_id
       t.float :avg_rating
       t.integer :no_of_rating, default: 0
-      t.datetime :created_at, default: Time.now
-      t.datetime :updated_at
+
+      t.timestamps
     end
   end
 end

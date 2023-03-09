@@ -4,8 +4,8 @@ class CreateProjectComments < ActiveRecord::Migration[7.0]
       t.integer :user_id
       t.string :comment_text
       t.integer :project_id
-      t.datetime :created_at, default: Time.now
-      t.datetime :updated_at
+
+      t.timestamps
     end
   end
 end
