@@ -33,7 +33,7 @@ jobs:
       - name: 'Generate firebase.json file'
         run: 'cp ./.hosting/moringa-library.firebase.json ./webapp/firebase.json'
       - name: 'Navigate to DIR, Install deps & Build the client'
-        run: cd webapp && npm ci && npm run build
+        run: make client-build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./webapp
