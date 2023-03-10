@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomeView from "./pages/HomeView";
 import LoginView from "./pages/LoginView";

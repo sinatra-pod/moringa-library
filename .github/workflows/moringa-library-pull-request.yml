@@ -1,0 +1,38 @@
+name: Moringa Library Dev PR
+'on': pull_request
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  id-token: write
+  issues: write
+  discussions: write
+  packages: write
+  pages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+
+env:
+  REACT_APP_API_URL: '${{ secrets.REACT_APP_API_URL}}'
+
+jobs:
+  build_and_preview:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Generate firebase.json file'
+        run: 'cp ./.hosting/moringa-library.firebase.json ./webapp/firebase.json'
+      - name: 'Navigate to DIR, Install deps & Build the client'
+        run: make client-build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          entryPoint: ./webapp
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MORINGA_LIBRARY }}'
+          projectId: moringa-library
+          expires: 7d
