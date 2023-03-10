@@ -1,6 +1,6 @@
 # Moringa Hub
 ![GitHub issues](https://img.shields.io/github/issues/sinatra-pod/moringa-library)
-![GitHub contributors](https://img.shields.io/github/contributors/sinatra-pod/moringa-library?color=green&style=plastic)
+![GitHub contributors](https://img.shields.io/github/contributors/sinatra-pod/moringa-library?color=green)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sinatra-pod/moringa-library?color=violet)
 
 ​Welcome to Moringa Hub, home of Moringa's most awesome projects!
@@ -27,7 +27,7 @@ This is an application where users can showcase their projects,designs and artic
     cd api
     ```
 
-### Environment Variables Setup
+## Environment Variables Setup
 To use the environment variables, create three environment files: `.env`, `.env.development` and `.env.production`.
 
 Use the following criteria to set your environment variables:
@@ -51,7 +51,7 @@ NB:
 * Ensure you use the prefix `REACT_APP_` to store all the variables that are needed in the React Application. Example: `REACT_APP_NAME=janedoe`
 * **DO NOT** commit any of the environment files to version control.
 
-### Docker Setup
+## Docker Setup
 * Run the command below from the terminal depending on the environment needed.
 ```
 [DEV]
@@ -99,6 +99,7 @@ docker-compose -f docker-compose-prod.yml up --build -d
 ## Collaboration Methodology
 
 In order to contribute to this repository, you need to follow these steps:
+
 
 * Create a new branch with your name and the feature you are working on. Example: `janedoe/reset-password`
 ```git
