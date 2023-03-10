@@ -18,3 +18,12 @@ jobs:
       - run: make api-gem-setup
       - run: make api-lint-fix
       - run: make api-lint-check
+
+  client-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: make client-npm-setup
+      - name: Run linter
+        run: make client-lint-check

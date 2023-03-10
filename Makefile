@@ -20,6 +20,21 @@ api-lint-fix:
 	cd api && rake lint:fix
 
 # @WEBAPP
+## Build
+client-build:
+	cd webapp && npm ci && npm run build
+
+## Install npm packages
+client-npm-setup:
+	cd webapp && npm install
+
+## ESLint check
+client-lint-check:
+	cd webapp && npm run lint
+
+## NPM tests
+client-test:
+	cd webapp && npm run test
 
 
 # @DOCKER
