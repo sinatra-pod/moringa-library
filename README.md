@@ -5,6 +5,8 @@ This is an application where users can showcase their projects,designs and artic
 
 ## Setup Instructions
 
+### Project Setup
+
 * Clone the repository
     ```
     git clone https://github.com/sinatra-pod/moringa-library.git
@@ -22,8 +24,45 @@ This is an application where users can showcase their projects,designs and artic
     cd api
     ```
 
+### Environment Variables Setup
+To use the environment variables, create three environment files: `.env`, `.env.development` and `.env.production`.
+
+Use the following criteria to set your environment variables:
+* `.env` -Common variables that are not specific to any environment.
+* `.env.development` -Variables that are only specific to `development` or `test` environments.
+* `.env.production` -Variables that are only specific to production environment. Example: `ENTRY`.
+
+```
+[ENVIRONMENT_DETAILS]
+
+[DOMAIN]
+CURRENT_SITE_DOMAIN=
+
+[SENTRY]
+SENTRY_DNS=
+
+[COMMON_API_CREDS]
+REACT_APP_API_URL=https://myApiServerUrl.com
+```
+* **DO NOT** commit any of the environment files to version control.
+
+### Docker Setup
+* Run the command below from the terminal depending on the environment needed.
+```
+[DEV]
+docker-compose -f docker-compose-dev.yml up --build -d
+
+[UAT]
+docker-compose -f docker-compose-uat.yml up --build -d
+
+[PROD]
+docker-compose -f docker-compose-prod.yml up --build -d
+
+```
+
+
 ## Technologies Used
-* Ruby
+* Ruby 
 * Sinatra
 * React
 * Typescript
@@ -34,11 +73,11 @@ This is an application where users can showcase their projects,designs and artic
 
 ## Requirements and Specifications
 ![node:v0.9.0](https://img.shields.io/badge/node-v0.9.0-blue.svg)
-![npm:v0.9.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
+![npm:v8.15.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
 ![ruby:2.7.4](https://img.shields.io/badge/ruby-2.7.4-yellow.svg)
-*  `node v0.9.0`
-* `npm 8.15.0`
-* `ruby 2.7.4`
+*  `node v0.9.0` and above
+* `npm 8.15.0` and above
+* `ruby 2.7.4` and above
 
 ## Authors
 * [Adera Karume](https://github.com/karume629)
@@ -54,15 +93,38 @@ This is an application where users can showcase their projects,designs and artic
 
 ## Collaboration Methodology
 
-Based on the Agile Method.
-Planning and tracking of project tasks was done using `Github Projects`.
-Sample steps:
+In order to contribute to this repository, you need to follow these steps:
 
-> - Check for any tasks assigned to you on the project boards.
-> - In your local environment, create a new branch and work on the task assigned to you while on that branch.
-> - Push your work to Github
-> - Create a pull request and link the ticket issue
-> - Update the details and status of that issue on the project boards.
+* Create a new branch with your name and the feature you are working on. Example: `janedoe/reset-password`
+```git
+git branch name/feature
+```
+
+* Checkout to your branch in order to work on a feature.
+```git
+git checkout name/feature
+```
+
+* Once you have completed your work on the feature, create a commit with a comprehensive message. Example:
+```git
+git commit -m"Login: added JWT token in header"
+```
+
+* Push the changes to the remote repository
+```git
+git push -u origin name/feature
+```
+
+* Ensure you create three environment files: `.env`, `.env.production` and `.env.development`.
+**Ensure you add any necessary variables in the appropriate file**. Example:
+```
+MONGO_DB_URI='random env here'
+## DO NOT commit your .env files to version control
+```
+
+* Once your code is in the remote branch, create a pull request to the `development` branch.
+* Each pull request will require at least 1 peer code review approval for the merge to be completed.
+* Hurray, you have successfully contributed.
 
 
 
