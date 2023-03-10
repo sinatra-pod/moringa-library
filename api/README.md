@@ -156,38 +156,8 @@ Database schema definitions.
 
 ### ROUTES
 
-1. `/hello` - Presents a simple welcome message.
-2. `/auth/register` - Create a new user account.
    
-   ```{json}
-   {
-    "email": "mail@student.moringaschool.com",
-    "password": "12345678"
-   }
-   ```
-3. `/auth/login` - Log in a user using email and password.
-
-   ```{json}
-   {
-    "email": "mail@mail.com",
-    "password": "12345678"
-   }
-   ```
-4. `/project/create` - Add a new submission item.
-
-   ```{json}
-   {
-    "title": "The force",
-    "category": "Fin-tech",
-    "description": "The force is here. A web application for Star Wars fans; get information about all the films in the franchise.",
-    "repository_link": "https://github.com/sinatra-pod/the-force",
-    "banner_image": "https://caleb.io/banner.png",
-    "tech_stacks": "React, Ruby, Typscript",
-    "license": "https://github.com/lisence-moringahub"
-   }
-   ```
-   
-5. `/projects` - List all Projects Submitted.
+1. `/projects` - List all Projects Submitted.
 
    ```{json}
    ## RESPONSE SAMPLE
@@ -207,10 +177,3 @@ Database schema definitions.
     "message": "SUCCESS"
    }
    ```
-6. `/projects/update/:id` - Update an existing Project.
-7. `/projects/delete/:id` - Delete a Project item.
-
-
-    <!-- ARTICLES -->
-
-8. `/` - Renders the landing page
