@@ -1,4 +1,7 @@
 # Moringa Hub
+![GitHub issues](https://img.shields.io/github/issues/sinatra-pod/moringa-library)
+![GitHub contributors](https://img.shields.io/github/contributors/sinatra-pod/moringa-library?color=green&style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/sinatra-pod/moringa-library?color=violet)
 
 ​Welcome to Moringa Hub, home of Moringa's most awesome projects!
 This is an application where users can showcase their projects,designs and articles; as well as view and review all kinds of other projects, designs and articles that have been made by other members of the Moringa ecosystem.
@@ -44,6 +47,8 @@ SENTRY_DNS=
 [COMMON_API_CREDS]
 REACT_APP_API_URL=https://myApiServerUrl.com
 ```
+NB:
+* Ensure you use the prefix `REACT_APP_` to store all the variables that are needed in the React Application. Example: `REACT_APP_NAME=janedoe`
 * **DO NOT** commit any of the environment files to version control.
 
 ### Docker Setup
@@ -59,25 +64,25 @@ docker-compose -f docker-compose-uat.yml up --build -d
 docker-compose -f docker-compose-prod.yml up --build -d
 
 ```
-
-
-## Technologies Used
-* Ruby 
-* Sinatra
-* React
-* Typescript
-* Jest
-* Firebase
-* Github Actions
-* Github Projects
-
-## Requirements and Specifications
+## Prerequisites
 ![node:v0.9.0](https://img.shields.io/badge/node-v0.9.0-blue.svg)
 ![npm:v8.15.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
 ![ruby:2.7.4](https://img.shields.io/badge/ruby-2.7.4-yellow.svg)
 *  `node v0.9.0` and above
 * `npm 8.15.0` and above
 * `ruby 2.7.4` and above
+
+## Technologies Used
+* Ruby `v2.7.0` 
+* Sinatra `v3.0`
+* React `v18.0`
+* Typescript `v4.9.5`
+* Jest `v29.5.0`
+* Firebase `v9.17.0`
+* Github Actions
+* Github Projects
+
+
 
 ## Authors
 * [Adera Karume](https://github.com/karume629)
