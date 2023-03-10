@@ -14,7 +14,6 @@ class UserController < Sinatra::Base
   end
 
   options '*' do
-
     response.headers['Allow'] = 'GET, PUT, POST, DELETE, OPTIONS'
     response.headers['Access-Control-Allow-Headers'] = 'Authorization, Content-Type, Accept, X-User-Email, X-Auth-Token'
     response.headers['Access-Control-Allow-Origin'] = '*'
@@ -59,8 +58,14 @@ class UserController < Sinatra::Base
     user = User.new(email: email, password: password, token: token)
     user.save
 
+    # check if user save is successful
+    if user.errors.any?
+      error_response(err: user.errors.full_messages.join(', '))
+    end
+
     json_response(code: 201, data: { token: token })
   end
   
+
 
 end
