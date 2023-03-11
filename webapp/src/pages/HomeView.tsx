@@ -13,7 +13,7 @@ const HomeView = () => {
   return (
       <>
         <AppBar/>
-        <div className="flex flex-col h-[100vh] justify-center items-center">
+        <div className="flex flex-col h-[100vh] bg-[#FEFBFF] justify-center items-center">
           <h1 className="text-red-400 text-3xl">{header ? header : "No present Header"}</h1>
         </div>
         <Footer/>

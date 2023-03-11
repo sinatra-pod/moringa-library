@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {NavDropItem} from "../../utils/types";
 import OutsideClickHandler from 'react-outside-click-handler';
 
-const AppBar = () => {
+const AppBar = (): JSX.Element => {
 
     // to be replaced with real data.
     const technologies: NavDropItem[] = [
@@ -24,34 +24,33 @@ const AppBar = () => {
         },
     ]
 
+
     const [isDropdownOpen, setDropdown ] = useState(false)
-    const toggleHoverMenu = () => setDropdown(!isDropdownOpen)
+    const toggleDropdown = () => setDropdown(!isDropdownOpen)
 
     return (
         <div className={'static'}>
-            <div className={'flex flex-row justify-between bg-[#2B3467] py-4 px-4'}>
+            <div className={'flex flex-row justify-between bg-[#4958A9] py-4 px-4'}>
 
-                <div className={'flex flex-row items-center w-[20%] justify-between'}>
+                <div className={'flex flex-row items-center w-[15%] justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
-                    <DropDownMenu
-                        title={'TECHNOLOGY'}
-                        hover={toggleHoverMenu}
-                        open={isDropdownOpen}
-                    />
+                    <DropDownMenu onClick={toggleDropdown} title={'TECHNOLOGY'} open={false} />
                     <NavItem title={'EXPLORE'} link={'/'} />
                 </div>
 
-                <Link to={'/'} className={'text-white bg-[#EB455F] p-3 items-center flex flex-row rounded-[35px] font-bold   hover:drop-shadow-md'}>
-                    <span className={'material-icons text-white mr-1'}>add</span>SUBMIT A PROJECT
+                <Link to={'/'} className={'text-white bg-[#B71B3D] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
+                    <span className={'material-icons text-white mr-1 font-medium'}>add</span>SUBMIT A PROJECT
                 </Link>
             </div>
 
-            {isDropdownOpen ? <div className={'absolute bg-[#BAD7E910] w-[15%] p-2 ml-[3%] flex flex-col divide-y'}>
+            {isDropdownOpen ?
                 <OutsideClickHandler onOutsideClick={() => setDropdown(false)} >
+                    <div className={'absolute bg-[#E3E1EC] w-[15%] p-2 ml-[3%] flex flex-col drop-shadow-lg rounded-lg divide-y'}>
                     { technologies.map((item, index) =>
                         <NavDropdownItem title={item.title} icon={item.icon} count={item.count} key={`drop_${index}`}/>) }
+                    </div>
                 </OutsideClickHandler>
-            </div> : <></>}
+            : <></>}
 
         </div>
     )
@@ -83,7 +82,7 @@ const NavItem = ({ title, link}: any): JSX.Element => {
  * */
 const NavDropdownItem = ({title, icon, count, link}: any) => {
     return (
-        <Link to={link} className={'flex flex-row justify-between p-2 hover:cursor-pointer'}>
+        <Link to={link} className={'flex flex-row justify-between p-2 hover:cursor-pointer text-[#46464F]'}>
             <div className={'items-center flex'}>
                 <img src={icon} className={'mr-2'} alt={title}/>
                 {title}
@@ -101,13 +100,14 @@ const NavDropdownItem = ({title, icon, count, link}: any) => {
  * ## PROPS
  * @param title - label on the header item
  * @param open - visibility of the dropdown list
- * @param visibilityToggle - callback for toggling visibility of dropdown list
+ * @param onClick - callback for toggling visibility of dropdown list
  * */
-const DropDownMenu = ({ title, open, visibilityToggle }: any) => {
+const DropDownMenu = ({ title, open, onClick }: any) => {
+
     return(
         <div
-            className={'flex flex-row items-center text-xl text-white font-bold hover:cursor-pointer'}
-            onClick={() => visibilityToggle ? visibilityToggle(): null}>
+            onClick={onClick}
+            className={'flex flex-row items-center text-xl text-white font-bold hover:cursor-pointer'}>
             { title } <span className={'material-icons text-white ml-1'}>{ open ? "arrow_drop_up" : "arrow_drop_down" }</span>
         </div>
     )
