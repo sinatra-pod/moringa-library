@@ -24,6 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: make webapp-npm-setup
+        run: make client-npm-setup
       - name: Run linter
-        run: make webapp-lint-check
+        run: make client-lint-check
