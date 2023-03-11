@@ -2,8 +2,10 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 import {NavDropItem} from "../../utils/types";
 import OutsideClickHandler from 'react-outside-click-handler';
+
 const AppBar = () => {
 
+    // to be replaced with real data.
     const technologies: NavDropItem[] = [
         {
             title: "Node.js",
@@ -27,7 +29,7 @@ const AppBar = () => {
 
     return (
         <div className={'static'}>
-            <div className={'flex flex-row justify-between bg-[#2B3467] py-4 px-4 w-[100%]'}>
+            <div className={'flex flex-row justify-between bg-[#2B3467] py-4 px-4'}>
 
                 <div className={'flex flex-row items-center w-[20%] justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
@@ -37,7 +39,6 @@ const AppBar = () => {
                         open={isDropdownOpen}
                     />
                     <NavItem title={'EXPLORE'} link={'/'} />
-                    <NavItem title={'ABOUT'} link={'/'} />
                 </div>
 
                 <Link to={'/'} className={'text-white bg-[#EB455F] p-3 items-center flex flex-row rounded-[35px] font-bold   hover:drop-shadow-md'}>
