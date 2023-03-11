@@ -32,8 +32,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: 'Generate firebase.json file'
         run: 'cp ./.hosting/moringa-library.firebase.json ./webapp/firebase.json'
-      - name: 'Navigate to DIR, Install deps & Build the client'
-        run: make client-build
+      - name: 'Navigate to DIR, Install deps & Build the webapp'
+        run: make webapp-build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./webapp
