@@ -59,6 +59,10 @@ const AppBar = () => {
 
 /**
  * @component: Top Nav Menu Item
+ *
+ * ## PROPS
+ * @param title - label on the header item
+ * @param link - url to navigate to upon click
  * */
 const NavItem = ({ title, link}: any): JSX.Element => {
     return(
@@ -70,6 +74,12 @@ const NavItem = ({ title, link}: any): JSX.Element => {
 
 /**
  * @component: Top Nav Dropdown Sub-Item
+ *
+ * ## PROPS
+ * @param title - label on the dropdown item
+ * @param icon - location of tech stack icon
+ * @param count - number of projects accepted
+ * @param link - url to navigate to upon click
  * */
 const NavDropdownItem = ({title, icon, count, link}: any) => {
     return (
@@ -87,12 +97,17 @@ const NavDropdownItem = ({title, icon, count, link}: any) => {
 
 /**
  * @component: Top Nav Menu Item (Dropdown)
+ *
+ * ## PROPS
+ * @param title - label on the header item
+ * @param open - visibility of the dropdown list
+ * @param visibilityToggle - callback for toggling visibility of dropdown list
  * */
-const DropDownMenu = ({ title, open, hover }: any) => {
+const DropDownMenu = ({ title, open, visibilityToggle }: any) => {
     return(
         <div
             className={'flex flex-row items-center text-xl text-white font-bold hover:cursor-pointer'}
-            onClick={() => hover ? hover(): null}>
+            onClick={() => visibilityToggle ? visibilityToggle(): null}>
             { title } <span className={'material-icons text-white ml-1'}>{ open ? "arrow_drop_up" : "arrow_drop_down" }</span>
         </div>
     )

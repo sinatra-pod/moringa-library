@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Footer = (): JSX.Element => {
     return (
-        <div className={'bg-[#E7E7EC] py-4 px-4 flex flex-row items-center'}>
+        <div className={'bg-[#E7E7EC] py-4 px-4 flex flex-row items-center fixed inset-x-0 bottom-0'}>
             <FooterLink title={'About'} link={'/about'}/>
             <FooterDivider/>
             <FooterLink title={'Terms'} link={'/terms'}/>
@@ -16,6 +16,10 @@ const Footer = (): JSX.Element => {
 
 /**
  * @component: Footer Menu Item
+ *
+ * ## PROPS
+ * @param title - label on the footer item
+ * @param link - url to navigate to upon click
  * */
 const FooterLink = ({title, link}: any):JSX.Element => {
     return (
@@ -30,8 +34,7 @@ const FooterLink = ({title, link}: any):JSX.Element => {
  * */
 const FooterDivider = (): JSX.Element => {
     return (
-        <div className={'w-[10px] h-[10px] border-[2px] mx-[30px] bg-[#2B3467] p-[5px] rounded-[35px]'}>
-
+        <div className={'w-[5px] h-[5px] border-[2px] mx-[30px] bg-[#BAD7E9] p-[2.5px] rounded-[35px]'}>
         </div>
     )
 }
