@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 import {NavDropItem} from "../../utils/types";
 import OutsideClickHandler from 'react-outside-click-handler';
-const NavBar = () => {
+const AppBar = () => {
 
     const technologies: NavDropItem[] = [
         {
@@ -97,4 +97,4 @@ const DropDownMenu = ({ title, open, hover }: any) => {
     )
 }
 
-export default NavBar;
+export default AppBar;
