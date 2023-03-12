@@ -32,9 +32,9 @@ const AppBar = (): JSX.Element => {
         <div className={'static'}>
             <div className={'flex flex-row justify-between bg-[#4958A9] py-4 px-4'}>
 
-                <div className={'flex flex-row items-center w-[15%] justify-between'}>
+                <div className={'flex flex-row items-center w-[20%] justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
-                    <DropDownMenu onClick={toggleDropdown} title={'TECHNOLOGY'} open={false} />
+                    <DropDownMenu onClick={toggleDropdown} title={'TECHNOLOGY'} open={isDropdownOpen} />
                     <NavItem title={'EXPLORE'} link={'/'} />
                 </div>
 
