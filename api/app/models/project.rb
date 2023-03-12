@@ -1,4 +1,4 @@
-class Project < ApplicationRecord
+class Project < ActiveRecord::Base
   belongs_to :submitter, class_name: "User"
   belongs_to :primary_tech_stack, class_name: "TechStack"
   has_and_belongs_to_many :tech_stacks

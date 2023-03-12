@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ProjectRating < ApplicationRecord
+class ProjectRating < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
 
