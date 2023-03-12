@@ -32,7 +32,7 @@ const AppBar = (): JSX.Element => {
         <div className={'static'}>
             <div className={'flex flex-row justify-between bg-[#4958A9] py-4 px-4'}>
 
-                <div className={'flex flex-row items-center w-[20%] justify-between'}>
+                <div className={'flex flex-row items-center justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
                     <DropDownMenu onClick={toggleDropdown} title={'TECHNOLOGY'} open={isDropdownOpen} />
                     <NavItem title={'EXPLORE'} link={'/'} />
@@ -45,7 +45,7 @@ const AppBar = (): JSX.Element => {
 
             {isDropdownOpen ?
                 <OutsideClickHandler onOutsideClick={() => setDropdown(false)} >
-                    <div className={'absolute bg-[#E3E1EC] w-[15%] p-2 ml-[3%] flex flex-col drop-shadow-lg rounded-lg divide-y'}>
+                    <div className={'absolute bg-[#E3E1EC] w-[15%] p-2 ml-[3%] flex flex-col drop-shadow-lg divide-y'}>
                     { technologies.map((item, index) =>
                         <NavDropdownItem title={item.title} icon={item.icon} count={item.count} key={`drop_${index}`}/>) }
                     </div>
@@ -65,7 +65,7 @@ const AppBar = (): JSX.Element => {
  * */
 const NavItem = ({ title, link}: any): JSX.Element => {
     return(
-        <Link to={link} className={'text-xl text-white font-bold'}>
+        <Link to={link} className={'text-xl text-white font-bold mx-4'}>
             { title }
         </Link>
     )
@@ -107,7 +107,7 @@ const DropDownMenu = ({ title, open, onClick }: any) => {
     return(
         <div
             onClick={onClick}
-            className={'flex flex-row items-center text-xl text-white font-bold hover:cursor-pointer'}>
+            className={'flex flex-row items-center text-xl text-white font-bold hover:cursor-pointer mx-4'}>
             { title } <span className={'material-icons text-white ml-1'}>{ open ? "arrow_drop_up" : "arrow_drop_down" }</span>
         </div>
     )
