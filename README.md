@@ -128,7 +128,7 @@ MONGO_DB_URI='random env here'
 ## DO NOT commit your .env files to version control
 ```
 
-* Once your code is in the remote branch, create a pull request to the `development` branch.
+* Once your code is in the remote branch, create a pull request to the `main` branch.
 * Each pull request will require at least 1 peer code review approval for the merge to be completed.
 * Hurray, you have successfully contributed.
 
