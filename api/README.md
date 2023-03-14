@@ -1,8 +1,5 @@
-# THE MORINGA HUB
-
-## DESCRIPTION
-
-**Moringa Hub - API** is a API that is built as a API that features all of the best Moringa School projects done by students and technical mentors.
+# MORINGA HUB API
+This API provides powers our application, [Moringa Library](https://moringa-library.web.app/). The API is built using Sinatra (Ruby).
 
 ## Technologies Used
 This application has been built with the following tools:
@@ -24,13 +21,13 @@ This application has been built with the following tools:
 
 
 ## Project Setup
-You can setup this repository by following this manual
+You can set up this repository by following this manual
 
 1. Clone the repository
     ```{shell}
    git clone https://github.com/sinatra-pod/moringa-library
    ```
-2. Ensure the ruby gems are setup in your machine
+2. Ensure the ruby gems are set up in your machine
     ```{shell}
    bundle install
    ```
@@ -51,67 +48,58 @@ You can setup this repository by following this manual
 
 
 
-## DB setup.
+## Database Setup
+Our application uses two main types of databases:
 
-## Step 1 — Installing PostgreSQL
+- **PostgreSQL** - Used in all our `development` and `production` environments.
+- **SQLite3** - Used when running our tests.
+
+The following section illustrates how to set up PostgreSQL on Debian based Linux distros `Ubuntu, Parrot, Kali Linux etc.`<br/>
+You can find alternate installation instructions for a different operating system [here](https://www.postgresql.org/download/).
+
+### Step 1 :- Installing PostgreSQL
+
+Postgres is available from the default repositories of all Debian distributions. You can use `apt` for installation.
+
+- Install Postgres
 ```
 $ sudo apt update
 $ sudo apt install postgresql postgresql-contrib
 ```
-Ensure that the server is running using the systemctl start command:
-```
-sudo systemctl start postgresql.service
 
-```
-
-## Step 2 — Using PostgreSQL Roles and Databases
-Switch over to the postgres account on your server by typing:
-```
-sudo -i -u postgres
-```
-You can now access a Postgres prompt immediately by typing:
-```
-psql
+- Ensure that the server is running using the systemctl start command:
+```{shell}
+$ sudo systemctl start postgresql.service
 ```
 
-Exit out of the PostgreSQL prompt by typing:
+### Step 2 :- Using PostgreSQL Roles and Databases
+
+- Switch over to the postgres account on your server by typing:
+```{shell}
+$ sudo -i -u postgres
 ```
-\q
+- Access the Postgres prompt immediately by typing:
+```{shell}
+$ psql
+```
+- Exit out of the PostgreSQL prompt by typing:
+```{shell}
+$ \q
+```
+
+### Step 3 (`optional`) :- Setting up a custom user role on Postgres
+Since the `postgres` user is the default user upon installation, you can set up a new user to access the db with the application.
+
+- Create a new user, make sure you replace `$USER` with the name of the user you want:
+```{shell}
+$ sudo -u postgres createuser --superuser $USER
 ```
 
 
-## Application.
-This application is a web API that allows users to:
-### Users
-A user is an entity that contributes to projects in the library. This is done through making submissions to the library and leaving reviews and ratings on projects.
- 
-- Users can register/log in to the platform using their email addresses or GitHub accounts.
-- Users can add a submission to the library (either a project or an article).
-- Users can update their submissions to the library.
-- Users can delete their submissions to the library.
-- Users can view all their submissions to the library
-- Users can check the status of their submission to the library.
-- Users can add a rating to an existing project in the library.
-- Users can add comments to an existing project in the library.
+## Application
 
-### Reviewers
-A reviewer is an entity that has the ability to perform reviews on existing submissions. They are responsible for contributing to the confirmation or rejection of a submission to the library.
+### Folder Structure
 
-
-- A reviewer can log in to the platform using their email address. (Based on Moringa School domain)
-- A reviewer can add comments about their review.
-- A reviewer can approve/reject a submission.
-
-
-### Admin
-An administrator is an entity with the ability to manage accounts for reviewers.
-
-- Create an account for a reviewer.
-- Delete a reviewer account.
-- Accept submission to the library.
-
-
-### Backend Folder structure
 
     .
     ├── ...
@@ -126,9 +114,10 @@ An administrator is an entity with the ability to manage accounts for reviewers.
 
 
 ### MODELS
-Database schema definitions.
+This section will describe the schema definitions for our database.
 
-#### SUBMISSIONS
+#### 1. projects
+- All the submissions that have been added onto the library.
 
 | COLUMN           | DATA TYPE                                         | DESCRIPTION                                      | 
 |------------------|---------------------------------------------------|--------------------------------------------------|
@@ -144,7 +133,10 @@ Database schema definitions.
 | status           | ENUM `[SUBMITTED, ON-REVIEW, APPROVED, DECLINED]` | The status of the submission.                    |
 
 
-#### USER
+#### 2. users
+
+- All the registered user accounts
+
 | COLUMN        | DATA TYPE | DESCRIPTION                           | 
 |---------------|-----------|---------------------------------------|
 | id            | Integer   | Unique identifier.                    |
@@ -156,18 +148,34 @@ Database schema definitions.
 
 ### ROUTES
 
+- This section describes all the API endpoints including their expected request and response objects.
+
    
-1. `/projects` - List all Projects Submitted.
+1. `/projects` - List all projects submitted.
 
    ```{json}
-   ## RESPONSE SAMPLE
+   --------------
+   @METHOD => GET
+   --------------
+   
+   ---------------
+   @AUTH => Bearer
+   ---------------
+   
+   ----------------
+   @REQUEST => None
+   ----------------
+   
+   -----------------
+   @RESPONSE => JSON
+   
    {
     "data": [
         {
             "id": 2,
             "title": "The force",
             "category": "Fin-tech",
-            "description": "The force is here. A web application for Star Wars fans; get information about all the films in the franchise.",
+            "description": "The force is here.",
             "repository_link": "https://github.com/sinatra-pod/the-force",
             "banner_image": "https://calebbii.io/banner.png",
             "tech_stacks": "React, Ruby, Typscript",
@@ -176,4 +184,6 @@ Database schema definitions.
         }],
     "message": "SUCCESS"
    }
+   
+   -----------------
    ```
