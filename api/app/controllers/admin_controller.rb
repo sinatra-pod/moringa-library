@@ -1,4 +1,3 @@
-# require 'pry'
 require_relative './base_controller'
 
 class AdminController < BaseController
