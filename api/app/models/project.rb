@@ -1,9 +1,7 @@
 class Project < ActiveRecord::Base
-  belongs_to :submitter, class_name: "User"
-  belongs_to :tech_stack, class_name: "TechStack"
+  belongs_to :users
   has_and_belongs_to_many :tech_stacks
-  has_many :comments, class_name: "ProjectComment"
-  has_many :project_reviews
+  has_many :project_comments
 
   enum submission_status: [:IN_REVIEW, :SUBMITTED, :ACCEPTED, :REJECTED, :REQUEST_CHANGE]
 

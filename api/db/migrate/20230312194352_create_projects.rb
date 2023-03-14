@@ -1,16 +1,26 @@
 class CreateProjects < ActiveRecord::Migration[7.0]
   def change
     create_table :projects do |t|
-      t.string :title, null: false
-      t.text :description, null: false
-      t.references :submitter, null: false, foreign_key: { to_table: :users }
-      t.references :tech_stack, null: false, foreign_key: true
-      t.integer :submission_status, null: false, default: 0
+      t.string :title
+      t.string :description
+      t.string :submission_status
+      t.integer :primary_tech_stack, foreign_key: { to_table: :tech_stacks}, null: false
+      t.string :banner_img
+      t.string :categories
+      t.string :license
+      t.string :repository
+      t.string :url
+      t.integer :submitter, foreign_key: { to_table: :users}, null: false
+      t.belongs_to :users
+      t.belongs_to :tech_stack
+      t.float :avg_rating
+      t.integer :no_of_rating, default: 0
+      t.datetime :created_at, default: -> { "now()" }
+      t.datetime :updated_at
 
-      t.timestamps
+      t.index :id, unique: true
+      t.index :repository, unique: true
+      t.index :url, unique: true
     end
-
-    add_index :projects, :submission_status
-    add_index :projects, [:title, :submitter_id], unique: true
   end
 end
