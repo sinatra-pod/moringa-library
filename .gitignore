@@ -5,6 +5,4 @@
 
 /.env
 .env/
-
-# test sqlite db
-/api/db/*.sqlite3
+./api/.env

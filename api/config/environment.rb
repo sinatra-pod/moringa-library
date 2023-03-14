@@ -1,4 +1,4 @@
-ENV["RACK_ENV"] ||= "development"
+ENV["RACK_ENV"] ||= "test"
 
 require 'bundler/setup'
 
