@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_194352) do
     t.integer "tech_stack_id", null: false
     t.index ["project_id", "tech_stack_id"], name: "index_projects_tech_stacks_on_project_id_and_tech_stack_id", unique: true
     t.index ["project_id"], name: "index_projects_tech_stacks_on_project_id"
-    t.index ["tech_stack_id"], name: "index_projects_tech_stacks_on_tech_stack_id"
+    t.index ["tech_stack_id"], name: "inde`x_proj`ects_tech_stacks_on_tech_stack_id"
   end
 
   create_table "tech_stacks", force: :cascade do |t|
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_194352) do
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "gh_username", null: false
+    t.string "name", null: false
     t.string "password_digest", null: false
     t.integer "role", null: false
     t.integer "tech_stack_id"
