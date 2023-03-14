@@ -4,9 +4,9 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email, null: false
       t.string :gh_username, null: false
       t.string :name, null: false
-      t.string :password_digest, null: false
+      t.string :password_hash
       t.integer :role, default: "USER", null: false
-      t.references :tech_stack, foreign_key: { to_table: :tech_stacks }, null: true
+      t.references :tech_stack, null: true
       t.timestamps
     end
 
