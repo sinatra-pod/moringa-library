@@ -2,3 +2,5 @@
 .env
 /.env
 .env/
+./idea
+.idea/
