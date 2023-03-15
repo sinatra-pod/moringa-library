@@ -32,10 +32,4 @@ class AdminController < BaseController
   end
 
 
-
-  # Helper method to send an email to a user with their default password
-  def send_password_email(user, password)
-    Pony.mail(to: user.email, subject: "Your new account on MyApp", body: "Your default password is: #{password}")
-  end
-
 end
