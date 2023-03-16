@@ -38,6 +38,11 @@ Use the following criteria to set your environment variables:
 ```
 [ENVIRONMENT_DETAILS]
 
+[DOCKER POSTRESQL DATABASE]
+DEV_DB_USER = 'database_username'
+DEV_DB_PASSWORD = 'database_password'
+DEV_DB_NAME = 'database_name'
+
 [DOMAIN]
 CURRENT_SITE_DOMAIN=
 
