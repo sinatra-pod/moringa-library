@@ -5,9 +5,9 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  username: <%= ENV['DEV_DB_USER'] %>
-  password: <%= ENV['DEV_DB_PASSWORD'] %>
-  database: <%= ENV['DEV_DB_NAME'] %>
+  username: 'okumu'
+  password: 'okumu'
+  database: 'okumu'
 
 production:
   <<: *default
