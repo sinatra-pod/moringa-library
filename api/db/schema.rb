@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_12_194352) do
   create_table "project_comments", force: :cascade do |t|
-    t.string "comment_text"
+    t.string "comment_text", null: false
     t.integer "user_id"
     t.integer "project_id"
     t.datetime "created_at", null: false
@@ -20,22 +20,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_194352) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "submission_status"
+    t.string "title", null: false
+    t.string "description", null: false
+    t.integer "submission_status", null: false
     t.integer "primary_tech_stack", null: false
-    t.string "banner_img"
-    t.string "categories"
-    t.string "license"
-    t.string "repository"
-    t.string "url"
+    t.string "banner_img", null: false
+    t.string "categories", null: false
+    t.string "license", null: false
+    t.string "repository", null: false
+    t.string "url", null: false
     t.integer "submitter", null: false
     t.integer "users_id"
     t.integer "tech_stack_id"
-    t.float "avg_rating"
+    t.float "avg_rating", null: false
     t.integer "no_of_rating", default: 0
-    t.datetime "created_at", default: -> { "now()" }
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["id"], name: "index_projects_on_id", unique: true
     t.index ["repository"], name: "index_projects_on_repository", unique: true
     t.index ["tech_stack_id"], name: "index_projects_on_tech_stack_id"
@@ -62,15 +62,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_12_194352) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "role", default: "USER"
     t.string "email", null: false
-    t.string "password_digest"
+    t.string "password_digest", null: false
     t.integer "tech_stack_id"
     t.integer "projects_id"
-    t.string "gh_username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "gh_username", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["projects_id"], name: "index_users_on_projects_id"
     t.index ["tech_stack_id"], name: "index_users_on_tech_stack_id"
   end

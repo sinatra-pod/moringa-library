@@ -1,5 +1,5 @@
 # Use a Ruby base image
-FROM ruby:2.7
+FROM ruby:3.7
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN bundle install
 COPY . .
 
 # Expose the port that the application will run on
-EXPOSE 4567
+EXPOSE 9292
 
 # Start the application
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "9292"]
