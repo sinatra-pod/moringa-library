@@ -22,6 +22,10 @@ gem 'puma', '~> 6.1'
 
 gem 'require_all', '~> 3.0'
 
+gem 'pony'
+
+gem 'sendgrid-ruby'
+
 gem 'rubocop', '~> 1.46', require: false
 
 group :development do
