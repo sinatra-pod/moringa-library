@@ -1,1 +1,12 @@
 /.idea
+.idea/
+/api/*.env
+/webapp/*.env
+
+/.env
+.env/
+./api/.env
+
+./idea
+
+.idea/

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web-api:
+    build: ./api
+    ports:
+      - "4567:4567"
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - library_db:/app/db
+  client:
+    build: ./webapp
+    ports:
+      - "3000:3000"
+volumes:
+  library_db:
