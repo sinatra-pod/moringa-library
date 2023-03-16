@@ -52,16 +52,22 @@ NB:
 * **DO NOT** commit any of the environment files to version control.
 
 ## Docker Setup
-* Run the command below from the terminal depending on the environment needed.
+
+MAke sure the following are installed:
+* `Makefile` - Use the link below to install https://makefiletutorial.com/.
+* `Docker` - https://www.docker.com/.
 ```
-[DEV]
-docker-compose -f docker-compose-dev.yml up --build -d
 
-[UAT]
-docker-compose -f docker-compose-uat.yml up --build -d
+* Run the command below from the terminal depending on the what is  needed.
+```
+[BUILD]
 
-[PROD]
-docker-compose -f docker-compose-prod.yml up --build -d
+make docker-build 
+
+[LOGS]
+
+make show-logs
+
 
 ```
 ## Prerequisites
