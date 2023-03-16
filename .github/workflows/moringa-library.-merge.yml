@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: 'Generate firebase.json file'
         run: 'cp ./.hosting/moringa-library.firebase.json ./webapp/firebase.json'
-      - name: 'Navigate to DIR, Install deps & Build the client'
+      - name: 'Navigate to DIR, Install deps & Build the webapp'
         run: make client-build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
