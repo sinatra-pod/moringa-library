@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
 
-  pp :password
-  pp :password_hash
   validates :role, presence: true
   validates :tech_stack, presence: true
 
