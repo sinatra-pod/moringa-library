@@ -58,23 +58,24 @@ NB:
 
 ## Docker Setup
 
-MAke sure the following are installed:
+In order to use this repo, you will need to set up Docker. Make sure the following are installed:
 * `Makefile` - Use the link below to install https://makefiletutorial.com/.
 * `Docker` - https://www.docker.com/.
-```
-
-* Run the command below from the terminal depending on the what is  needed.
-```
-[BUILD]
-
-make docker-build 
-
-[LOGS]
-
-make show-logs
 
 
-```
+1. Build Docker container.
+    ```
+    $ make docker-build 
+    ```
+2. Show logs from container processes.
+    ```
+    $ make show-logs
+    ```
+3. All client sided routes are rendered from root, `/`. Example `http://localhost:8080/admin` - Admin React Page
+4. All API endpoints are rendered from `/api/`. Example `http://localhost:8080/api/admin` - Admin endpoint
+
+**NB: All requests are listening from port `8080`.**
+
 ## Prerequisites
 ![node:v0.9.0](https://img.shields.io/badge/node-v0.9.0-blue.svg)
 ![npm:v8.15.0](https://img.shields.io/badge/npm-v8.15.0-blueviolet.svg)
@@ -90,8 +91,10 @@ make show-logs
 * Typescript `v4.9.5`
 * Jest `v29.5.0`
 * Firebase `v9.17.0`
-* Github Actions
-* Github Projects
+* nginx
+* Docker
+* GitHub Actions
+* GitHub Projects
 
 
 
@@ -124,7 +127,7 @@ git checkout name/feature
 
 * Once you have completed your work on the feature, create a commit with a comprehensive message. Example:
 ```git
-git commit -m"Login: added JWT token in header"
+git commit -m" Login: added JWT token in header"
 ```
 
 * Push the changes to the remote repository

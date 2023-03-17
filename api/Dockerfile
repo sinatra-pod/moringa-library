@@ -1,5 +1,5 @@
 # Use a Ruby base image
-FROM ruby:3.0-slim-buster
+FROM ruby:3.0.2
 
 # Set the working directory inside the container
 WORKDIR /app

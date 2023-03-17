@@ -23,7 +23,7 @@ services:
     networks:
       - moringa_library
 
-  client:
+  webapp:
     build: ./webapp
     ports:
       - "3000:3000"
@@ -40,7 +40,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8080:80"
     networks:
       - moringa_library
 
