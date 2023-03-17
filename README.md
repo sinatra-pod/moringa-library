@@ -131,7 +131,7 @@ git checkout name/feature
 
 * Once you have completed your work on the feature, create a commit with a comprehensive message. Example:
 ```git
-git commit -m" Login: added JWT token in header"
+git commit -m "Login: added JWT token in header"
 ```
 
 * Push the changes to the remote repository
