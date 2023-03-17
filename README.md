@@ -71,8 +71,12 @@ In order to use this repo, you will need to set up Docker. Make sure the followi
     ```
     $ make show-logs
     ```
-3. All client sided routes are rendered from root, `/`. Example `http://localhost:8080/admin` - Admin React Page
-4. All API endpoints are rendered from `/api/`. Example `http://localhost:8080/api/admin` - Admin endpoint
+3. Stop container.
+    ```
+    $ make start 
+    ```
+4. All client sided routes are rendered from root, `/`. Example `http://localhost:8080/admin` - Admin React Page
+5. All API endpoints are rendered from `/api/`. Example `http://localhost:8080/api/admin` - Admin endpoint
 
 **NB: All requests are listening from port `8080`.**
 
