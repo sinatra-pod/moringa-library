@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web-api:
+  api:
     build: ./api
     ports:
       - "9292:9292"
@@ -10,7 +10,6 @@ services:
       - db
     networks:
       - moringa_library
-
   db:
     image: postgres:12-alpine
     ports:
@@ -29,6 +28,19 @@ services:
     ports:
       - "3000:3000"
     restart: on-failure
+    networks:
+      - moringa_library
+
+
+  nginx:
+    restart: always
+    depends_on:
+      - api
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
     networks:
       - moringa_library
 
