@@ -3,7 +3,6 @@ class CreateTechStacks < ActiveRecord::Migration[7.0]
     create_table :tech_stacks do |t|
       t.string :name, null: false
       t.text :description, null: false
-      t.belongs_to :users
       t.timestamps
     end
 
