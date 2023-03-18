@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   has_secure_password
 
   has_many :projects
-  has_many :project_reviews
-  belongs_to :tech_stack, class_name: 'TechStack', foreign_key: 'tech_stack', optional: true
+  belongs_to :tech_stack
   enum role: [:admin, :reviewer, :user]
 
+
+  
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
+
   validates :role, presence: true
   validates :tech_stack, presence: true
 

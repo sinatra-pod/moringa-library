@@ -1,6 +1,5 @@
-class TechStack < ApplicationRecord
-  has_many :users, foreign_key: 'tech_stack_id'
-  has_many :projects_tech_stacks
+class TechStack < ActiveRecord::Base
+  has_many :users
   has_many :projects, through: :projects_tech_stacks
 
   validates :name, presence: true, uniqueness: true
