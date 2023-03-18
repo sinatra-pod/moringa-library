@@ -38,7 +38,7 @@ const AppBar = (): JSX.Element => {
                     <NavItem title={'EXPLORE'} link={'/'} />
                 </div>
 
-                <Link to={'/'} className={'text-white bg-[#B71B3D] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
+                <Link to={'/addproject'} className={'text-white bg-[#B71B3D] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
                     <span className={'material-icons text-white mr-1 font-medium'}>add</span>SUBMIT A PROJECT
                 </Link>
             </div>
