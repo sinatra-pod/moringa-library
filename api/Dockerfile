@@ -1,11 +1,12 @@
 # Use a Ruby base image
-FROM ruby:3.7
+FROM ruby:3.0.2
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the container
 COPY Gemfile Gemfile.lock ./
+COPY .ruby-version ./
 
 # Install dependencies
 RUN bundle install
