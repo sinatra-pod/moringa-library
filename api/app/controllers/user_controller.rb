@@ -1,6 +1,6 @@
 
 
-class UserController < Sinatra::Base
+class UserController < Base
   JWT_SECRET = 'my$ecretK3y'
 
   # @API: Enable CORS headers from all origins
