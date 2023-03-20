@@ -2,6 +2,10 @@ import React,{useState} from 'react';
 import useHeader from "../hooks/useHeader";
 import logo from "../assets/logo.png"
 import {MdOutlineEmail, MdLockOutline} from 'react-icons/md'
+import {FcGoogle} from 'react-icons/fc'
+import {FaGithub} from 'react-icons/fa'
+
+
 
 function SignupView() {
 
@@ -30,12 +34,12 @@ function SignupView() {
   }
     return (
         <div className='flex h-[100vh] justify-center items-center '>
-            <section className="signcard flex flex-col md:flex-row box-border border-1 border-gray rounded-xl h-[80%] w-[80%] justify-center items-center shadow-2xl">
-                <div className='logopart bg-gray-900 dark:bg-gray-900 h-full w-full basis-1/2 text-white-200 flex flex-col md:flex-row items-center justify-center'>
+            <section className="signcard flex flex-col md:flex-row box-border border-1 border-gray rounded-xl h-full w-full justify-center items-center shadow-2xl">
+                <div className='logopart bg-gray-900 dark:bg-gray-900 h-full w-full basis-1/2 text-white-200 flex flex-col  items-center justify-center'>
                     <div className="imagepart basis-1/2 flex justify-end items-end ">
                         <img className="object-contain h-48 w-96  rounded-tl-xl" src={logo} alt="logo"/>
                     </div>
-                    <div className="basis-1/2 flex flex-col justify-start items-start">
+                    <div className="basis-1/2 flex flex-col  items-center">
                         <h1 className='text-gray-500 text-5xl p-3 font-medium'>MORINGA</h1>
                         <h2 className='text-white text-5xl p-3 font-semibold'>HUB</h2>
                     </div>
@@ -57,13 +61,15 @@ function SignupView() {
                             <MdLockOutline style={{ fontSize: '25 '}}/>
                         </div>
                         <div className="flex justify-center items-center m-5">
-                            <button className="flex-shrink-0 bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-xl font-medium" type="submit" onClick={handleSubmit}>Sign Up </button>
+                            <button className="flex-shrink-0 w-[200px] bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-xl font-medium m-3" type="submit" onClick={handleSubmit}>Sign Up </button>
 
                         </div>
-                        <div className="socials flex flex-row divide-x">
-                            <button></button>
+                        <div className="socials flex flex-row divide-x items-center justify-center m-3">
+                            <div className='flex flex-row items-center p-2'><FcGoogle/> <p className='p2 m-2'>Google</p> </div>
+                            <div className='flex flex-row items-center p-2'><FaGithub/> <p className='p2 m-2'>Github</p> </div>
+
                         </div>
-                        <div className="loginpart flex justify-center">
+                        <div className="loginpart flex justify-center mt-3">
                             <p className="text-sm font-medium text-gray-900 dark:text-gray-900">Already have an account? <a href="#" className="font-semibold text-pink-600 hover:underline dark:text-pink-500">Login here</a></p>
                         </div>
                     </form>
