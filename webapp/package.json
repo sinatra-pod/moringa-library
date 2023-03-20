@@ -10,6 +10,7 @@
     "@types/node": "^16.18.13",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "formik": "^2.2.9",
     "material-icons": "^1.13.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,7 +18,8 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
