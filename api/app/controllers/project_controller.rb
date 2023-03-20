@@ -1,14 +1,8 @@
 # frozen_string_literal: true
 
-# Define the project API routes
 require_relative "./base_controller"
 require 'json'
-# app.rb
-# Models
-# require './models/user'
-# require './models/project'
-# require './models/tech_stack'
-
+# @TIP: every controller will inherit from the base controller
 class ProjectController < BaseController
   post '/projects' do
     title = params[:title]
