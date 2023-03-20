@@ -3,10 +3,10 @@ require_relative './base_controller'
 class AdminController < BaseController
   set :default_content_type, 'application/json'
 
+
+      # Allow admin to add reviewers and admin account to the system
+    # A random default password is sent to the user's email address
   post '/admin/add_user' do
-    # Allow admin to add reviewers and admin account to the system
-    # A random default password is sent to the user's email address 
-  
     # Get the user data from the request 
     data = JSON.parse(request.body.read)
     name = data["name"]
