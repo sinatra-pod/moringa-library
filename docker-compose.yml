@@ -1,0 +1,52 @@
+version: '3'
+services:
+  api:
+    build: ./api
+    ports:
+      - "9292:9292"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - moringa_library
+  db:
+    image: postgres:12-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    networks:
+      - moringa_library
+
+  webapp:
+    build: ./webapp
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    networks:
+      - moringa_library
+
+
+  nginx:
+    restart: always
+    depends_on:
+      - api
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - moringa_library
+
+networks:
+  moringa_library:
+    driver: bridge
+volumes:
+  postgres_data:
+
