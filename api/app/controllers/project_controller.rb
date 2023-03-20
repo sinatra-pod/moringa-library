@@ -1,4 +1,5 @@
-# # frozen_string_literal: true
+# frozen_string_literal: true
+
 # require_relative './base_controller'
 # require 'json'
 # # @TIP: every controller will inherit from the base controller
