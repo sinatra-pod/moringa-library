@@ -24,6 +24,9 @@ gem 'require_all', '~> 3.0'
 
 gem 'rubocop', '~> 1.46', require: false
 
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f' 
+
+
 group :development do
   gem 'faker'
   gem 'rerun', '~> 0.14.0'

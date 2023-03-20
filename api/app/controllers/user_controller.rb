@@ -1,5 +1,4 @@
-require 'sinatra'
-require 'jwt'
+
 
 class UserController < Sinatra::Base
   JWT_SECRET = 'my$ecretK3y'
