@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Define the project API routes
 require_relative "./base_controller"
 require 'json'
