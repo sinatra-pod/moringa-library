@@ -1,20 +1,35 @@
 # Define the project API routes
 require_relative "./base_controller"
 require 'json'
+# app.rb
+# Models
+# require './models/user'
+# require './models/project'
+# require './models/tech_stack'
 
 class ProjectController < BaseController
-  set :default_content_type, 'application/json'
-
   post '/projects' do
-    content_type :json
+    title = params[:title]
+    description = params[:description]
+    submission_status = params[:submission_status]
+    tech_stack_ids = params[:tech_stack_ids]
 
-    project_data = JSON.parse(request.body.read)
-    @project = Project.new(project_data)
+    # create a new project instance and set its attributes
+    project = Project.new
+    project.title = title
+    project.description = description
+    project.submission_status = submission_status
+    project.tech_stack_ids = tech_stack_ids
 
-    if @project.save
-      { success: true, project: @project }.to_json
+    # save the project to the database
+    if project.save
+      # return a success response
+      status 201
+      { message: 'Project created successfully', project: project }.to_json
     else
-      { success: false, errors: @project.errors.full_messages }.to_json
+      # return an error response
+      status 400
+      { message: 'Project creation failed', errors: project.errors.full_messages }.to_json
     end
   end
 end
