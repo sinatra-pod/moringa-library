@@ -4,3 +4,4 @@
 .env/
 ./idea
 .idea/
+/api/db/moringa-lib-test.sqlite3
