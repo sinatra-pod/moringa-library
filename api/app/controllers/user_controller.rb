@@ -13,7 +13,7 @@ class UserController < Base
 
     # generate jwt token
     payload = { email: email }
-    token = JWT.encode payload, JWT_SECRET, 'HS256'
+   
 
     # save user to db
     user = User.new(email: email, password: password, token: token)
@@ -23,6 +23,8 @@ class UserController < Base
     if user.errors.any?
       error_response(err: user.errors.full_messages.join(', '))
     end
+
+    token = JWT.encode payload, JWT_SECRET, 'HS256'
 
     json_response(code: 201, data: { token: token })
   end
