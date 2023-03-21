@@ -38,28 +38,20 @@ class AdminController < BaseController
     end
   end
   
-  get 'admin/users' do
-
-    name = params[:name]
-    email = params[:email]
-    id = params[:id]
-
-
-    if params[:name].present?
-      @user = User.find_by(name: params[:name])
-    elsif params[:email].present?
-      @user = User.find_by(email: params[:email])
-    elsif params[:id].present?
-      @user = User.find_by(id: params[:id])
-    end
-    
-    if @user
-      json_response(code: 200, data: { user: @user })
+  
+  get '/admin/users/:query' do
+    users = User.all
+    query = params['query'] 
+  
+    # Search for the user based on their name, email, or id
+    user = users.find { |u| u[:name].downcase == query.downcase || u[:email].downcase == query.downcase || u[:id] == query.to_i }
+  
+    if user
+      json_response(code: 200, data: { user: user })
     else
       json_response(code: 404, data: { message: "User not found" })
     end
   end
-
 
 
 
