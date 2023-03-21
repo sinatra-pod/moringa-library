@@ -42,7 +42,6 @@ class AdminController < BaseController
   get '/admin/users/:query' do
     users = User.all
     query = params['query']
-
     # Search for the user based on their name, email, or id
     user = users.find { |u| u[:name].downcase == query.downcase || u[:email].downcase == query.downcase || u[:id] == query.to_i }
 
