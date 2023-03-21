@@ -12,8 +12,8 @@ function AllSubmissionView() {
                 <div className='ml-14'>
 
                     {/* Sidebar content here */}
-                    <h3><em>FILTER BY</em></h3>
-                    <br></br>
+                    <h3 className='mt-5 mb-2 font-semibold'>FILTER BY</h3>
+
 
                     {/* Category Section */}
                     <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">Categories</h3>
