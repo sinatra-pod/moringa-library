@@ -4,3 +4,5 @@
 .env/
 ./idea
 .idea/
+/db/moringa-lib-test.sqlite3
+./db/moringa-lib-test.sqlite3
