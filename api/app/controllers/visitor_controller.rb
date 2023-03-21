@@ -15,7 +15,7 @@ class VisitorController < BaseController
       begin
         sql = "(title LIKE :query OR description LIKE :query) AND submission_status = 'ACCEPTED'"
         @projects = Project
-                    .where(sql, {:query => "%#{query}%"})
+                    .where(sql, { query: "%#{query}%" })
                     .order(created_at: :desc)
         json_response(data: { projects: @projects })
       rescue StandardError => e
