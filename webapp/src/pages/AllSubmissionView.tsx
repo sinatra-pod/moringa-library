@@ -113,52 +113,52 @@ function AllSubmissionView() {
                 <main className='p-4'>
                 {/* <!-- Main content here --> */}
                 <div className="grid grid-cols-3 gap-4">
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
-                    <div className="p-4">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                    <div className="p-4 bg-white rounded-lg">
+                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
                         The Force
                         <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
                         <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
                         </div>
                     </div>
                 </div>
