@@ -2,5 +2,5 @@
 
 require_relative './config/environment'
 
-# use TodoController
+use VisitorController
 run BaseController
