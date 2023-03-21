@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_153523) do
   create_table "projects", force: :cascade do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.integer "submission_status", null: false
+    t.integer "submission_status", default: 0, null: false
     t.integer "primary_tech_stack", null: false
     t.string "banner_img", null: false
     t.string "categories", null: false
@@ -82,11 +82,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_153523) do
   create_table "tech_stacks", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tech_stacks_on_name", unique: true
-    t.index ["users_id"], name: "index_tech_stacks_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,11 +93,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_153523) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.integer "tech_stack_id"
-    t.integer "projects_id"
     t.string "gh_username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["projects_id"], name: "index_users_on_projects_id"
     t.index ["tech_stack_id"], name: "index_users_on_tech_stack_id"
   end
 
