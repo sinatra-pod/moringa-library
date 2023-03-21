@@ -151,7 +151,7 @@ This section will describe the schema definitions for our database.
 - This section describes all the API endpoints including their expected request and response objects.
 
    
-1. `/projects` - List all projects submitted.
+1. `/guest/projects` - List all accepted submissions.
 
    ```{json}
    --------------
@@ -159,7 +159,7 @@ This section will describe the schema definitions for our database.
    --------------
    
    ---------------
-   @AUTH => Bearer
+   @AUTH => None
    ---------------
    
    ----------------
@@ -184,6 +184,42 @@ This section will describe the schema definitions for our database.
         }],
     "message": "SUCCESS"
    }
+
+   -----------------
+   ```
+2. `/guest/projects/search/:query` - Search for accepted submissions that have their titles or description match the `:query` path parameter.
+
+   ```{json}
+   --------------
+   @METHOD => GET
+   --------------
    
+   ---------------
+   @AUTH => None
+   ---------------
+   
+   ----------------
+   @REQUEST => None
+   ----------------
+   
+   -----------------
+   @RESPONSE => JSON
+   
+   {
+    "data": [
+        {
+            "id": 2,
+            "title": "The force",
+            "category": "Fin-tech",
+            "description": "The force is here.",
+            "repository_link": "https://github.com/sinatra-pod/the-force",
+            "banner_image": "https://calebbii.io/banner.png",
+            "tech_stacks": "React, Ruby, Typscript",
+            "license": "https://github.com/lisence-moringahub"
+            "status": "CREATED"
+        }],
+    "message": "SUCCESS"
+   }
+
    -----------------
    ```
