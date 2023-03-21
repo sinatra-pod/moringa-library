@@ -9,7 +9,7 @@ def send_password_email(user, password)
   subject = "Moringa Hub Account Password"
   content = SendGrid::Content.new(type: "text/html", value: "Your default password is: #{password}")
   mail = SendGrid::Mail.new(from, subject, to, content)
-  sg = SendGrid::API.new(api_key: "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")
+  sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
   response = sg.client.mail._('send').post(request_body: mail.to_json)
   puts response.status_code
   puts response.headers

@@ -37,7 +37,21 @@ class AdminController < BaseController
   
     end
   end
-  
+
+
+  get '/admin/users/:query' do
+    users = User.all
+    query = params['query']
+
+    # Search for the user based on their name, email, or id
+    user = users.find { |u| u[:name].downcase == query.downcase || u[:email].downcase == query.downcase || u[:id] == query.to_i }
+
+    if user
+      json_response(code: 200, data: { user: user })
+    else
+      json_response(code: 404, data: { message: "User not found" })
+    end
+  end
   def json_params
     begin
       JSON.parse(request.body.read)
