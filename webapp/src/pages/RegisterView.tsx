@@ -5,6 +5,8 @@ import {MdOutlineEmail, MdLockOutline} from 'react-icons/md'
 import {FcGoogle} from 'react-icons/fc'
 import {FaGithub} from 'react-icons/fa'
 import { BiUser } from "react-icons/bi";
+import { useForm } from "react-hook-form";
+
 
 
 
@@ -21,21 +23,24 @@ function SignupView() {
   function handlePassword(event:any){
     setPassword(event.target.value)
   }
-  function handleSubmit(){
-    fetch("http://localhost:9292/users",{
-        method:"POST",
-        mode:"cors",
-        body:JSON.stringify({
-            email:email,
-            password:password
-        }),
-        headers:{
-            "Content-type":"application/json"
-        }
-    })
+  function submitData(data:any){
+    // fetch("http://localhost:9292/users",{
+    //     method:"POST",
+    //     mode:"cors",
+    //     body:JSON.stringify({
+    //         email:email,
+    //         password:password
+    //     }),
+    //     headers:{
+    //         "Content-type":"application/json"
+    //     }
+    // })
+    console.log(data)
   }
 
   const styleIcons = {color: "gray"}
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
 
     return (
         <div className='flex h-[250vh] md:h-[100vh] justify-center items-center '>
@@ -55,26 +60,44 @@ function SignupView() {
                             <p className="text-sm font-medium text-gray-900 dark:text-gray-900">Already have an account? <a href="#" className="font-semibold text-pink-600 hover:underline dark:text-pink-500">Login here</a></p>
                     </div>
 
-                    <form className="w-[80%]  m-5" onSubmit={handleSubmit}>
-                        <div className='flex border-b border-gray-600 py-3 ml-5 mb-[20px]'>
-                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="text" placeholder="Your name" aria-label="name"/>
-                            <BiUser size={28} />
-                        </div>
-                        <div className='flex shrink border-b border-gray-600 py-3 ml-5 mb-[20px]'>
-                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="email" placeholder="Your Email" aria-label="Email" onChange={handleEmail}/>
-                            <MdOutlineEmail size={28}/>
-                        </div>
+                    <form className="w-[80%]  m-5" onSubmit={handleSubmit(submitData)}>
                         
                         <div className='flex border-b border-gray-600 py-3 ml-5 mb-[20px]'>
-                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="password" placeholder="Your Password" aria-label="password" onChange={handlePassword}/>
+                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="text" placeholder="Your name" aria-label="name"   {...register("name", { required: true, maxLength: 100 })}/>
+                            <BiUser size={28} />
+                        </div>
+                        {
+                            errors.name && (<p className="py-3 ml-5 mb-[10px] text-sm text-red-500 ">Please add username</p>)
+                            
+                        }
+                        <div className='flex shrink border-b border-gray-600 py-3 ml-5 mb-[20px]'>
+                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="email" placeholder="Your Email" aria-label="Email" {...register("email",
+                            {
+                                required: true,
+                                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                            })}/>
+                            <MdOutlineEmail size={28}/>
+                        </div>
+                        {
+                            errors.email && (<p className="py-3 ml-5 mb-[10px] text-sm text-red-500 ">Please add valid email</p>)
+                            
+                        }
+                        <div className='flex border-b border-gray-600 py-3 ml-5 mb-[20px]'>
+                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="password" placeholder="Your Password" aria-label="password" {...register("password", {
+                            required: true,
+                        })}/>
                             <MdLockOutline size={28}/>
                         </div>
+                        {
+                            errors.password && (<p className="py-3 ml-5 mb-[10px] text-sm text-red-500 ">Please add valid password</p>)
+                            
+                        }
                         <div className='flex border-b border-gray-600 py-3 ml-5 mb-[20px]'>
                             <input className="appearance-none bg-transparent border-none w-full text-gray-700 leading-tight focus:outline-none" type="password" placeholder="Confirm Your Password" aria-label="confirm password"/>
                             <MdLockOutline size={28} />
                         </div>
                         <div className="flex justify-center items-center m-5">
-                            <button className="flex-shrink-0 w-[200px] bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-[35px] font-medium m-3" type="submit" onClick={handleSubmit}>Sign Up </button>
+                            <button className="flex-shrink-0 w-[200px] bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-[35px] font-medium m-3" type="submit">Sign Up </button>
 
                         </div>
                         <div className="socials flex flex-row divide-x items-center justify-center m-3">
@@ -84,7 +107,6 @@ function SignupView() {
                         </div>
                         
                     </form>
-
                     
                     
                 </div>
