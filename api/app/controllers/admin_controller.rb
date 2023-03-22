@@ -12,10 +12,10 @@ class AdminController < BaseController
     # Get the user data from the request
     data = JSON.parse(request.body.read)
     name = data['name']
-    role= data['role']
+    role = data['role']
     email = data['email']
     gh_username = data['gh_username']
-  
+
     # Check if the user already exists
     user = User.find_by(email: email)
     if user
@@ -24,10 +24,10 @@ class AdminController < BaseController
     else
       # Generate a random password for the user
       password = SecureRandom.base64(12) + "!2"
-  
+
       # Create the new user with the reviewer role and the generated password
       user = User.new(name: name, email: email, role: role, password: password, gh_username: gh_username)
-  
+
       if user.save
         send_password_email(user, password)
         # Return a success message
@@ -36,24 +36,25 @@ class AdminController < BaseController
         # Return an error message
         json_response(code: 400, data: { error: user.errors })
       end
-  
     end
   end
   
   get '/admin/users/:query' do
+    # get all users
     users = User.all
-    query=params['query']
+
+    # get query from the url
+    query = params['query']
 
     # Search for the user based on their name, email, or id
     user = users.find { |u| u[:name].downcase == query.downcase || u[:email].downcase == query.downcase || u[:id] == query.to_i}
-  
+
     if user
       json_response(code: 200, data: { user: user })
     else
       json_response(code: 404, data: { message: 'User not found' })
     end
   end
-
 
   def json_params
     begin
