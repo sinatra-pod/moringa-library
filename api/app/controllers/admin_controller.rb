@@ -38,16 +38,16 @@ class AdminController < BaseController
       end
     end
   end
-  
+
   get '/admin/users/:query' do
     # get all users
     users = User.all
 
-    # get query from the url
-    query = params['query']
+    # get query from the url and turn it into lowercase
+    query = params['query'].downcase
 
     # Search for the user based on their name, email, or id
-    user = users.find { |u| u[:name].downcase == query.downcase || u[:email].downcase == query.downcase || u[:id] == query.to_i}
+    user = users.find { |u| u[:name].downcase == query || u[:email].downcase == query || u[:id] == query.to_i }
 
     if user
       json_response(code: 200, data: { user: user })
@@ -57,10 +57,9 @@ class AdminController < BaseController
   end
 
   def json_params
-    begin
       JSON.parse(request.body.read)
     rescue
-      halt 400, { message:'Invalid JSON' }.to_json
+      halt 400, { message: 'Invalid JSON' }.to_json
     end
   end
 end
