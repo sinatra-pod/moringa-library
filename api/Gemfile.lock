@@ -34,6 +34,8 @@ GEM
     minitest (5.18.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
+    net-http (0.3.2)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -113,6 +115,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    uri (0.12.0)
 
 PLATFORMS
   x86_64-linux
@@ -121,6 +124,7 @@ DEPENDENCIES
   activerecord (~> 7.0, >= 7.0.4.2)
   bcrypt (~> 3.1, >= 3.1.18)
   faker
+  net-http
   pg (~> 1.4, >= 1.4.6)
   pony
   puma (~> 6.1)
@@ -136,9 +140,7 @@ DEPENDENCIES
   sinatra-activerecord (~> 2.0, >= 2.0.26)
   sinatra-cross_origin (~> 0.4.0)
   sqlite3 (~> 1.6, >= 1.6.1)
-
-RUBY VERSION
-   ruby 3.0.2p107
+  uri
 
 BUNDLED WITH
-   2.3.14
+   2.4.1
