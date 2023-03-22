@@ -58,8 +58,7 @@ class AdminController < BaseController
 
   def json_params
       JSON.parse(request.body.read)
-    rescue
+    rescue StandardError
       halt 400, { message: 'Invalid JSON' }.to_json
-    end
   end
 end
