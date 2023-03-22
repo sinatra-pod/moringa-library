@@ -1,9 +1,11 @@
 import React from 'react'
+import AppBar from '../components/header/AppBar'
 
 function AllSubmissionView() {
   return (
     <div>
-        <div className='flex h-screen bg-gray-100'>
+        <AppBar/>
+        <div className='flex h-screen bg-gray-100 mt-6'>
                 {/* Sidebar */}
             <div className='bg-white w-1/5'>
 
