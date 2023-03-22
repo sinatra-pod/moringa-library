@@ -28,9 +28,9 @@ gem 'sendgrid-ruby'
 
 gem 'rubocop', '~> 1.46', require: false
 
-gem "net-http"
+gem 'net-http'
 
-gem "uri"
+gem 'uri'
 
 group :development do
   gem 'rack-env',  '~> 0.1.3'

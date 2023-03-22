@@ -1,27 +1,29 @@
+# frozen_string_literal: true
+
 require_relative './base_controller'
 
+# api/controllers/admin_controller - controller for the admin role
 class AdminController < BaseController
   set :default_content_type, 'application/json'
 
-
-      # Allow admin to add reviewers and admin account to the system
-    # A random default password is sent to the user's email address
+  # Allow admin to add reviewers and admin account to the system
+  # A random default password is sent to the user's email address
   post '/admin/add_user' do
-    # Get the user data from the request 
+    # Get the user data from the request
     data = JSON.parse(request.body.read)
-    name = data["name"]
-    role= data["role"]
-    email = data["email"]
-    gh_username = data["gh_username"]
+    name = data['name']
+    role= data['role']
+    email = data['email']
+    gh_username = data['gh_username']
   
     # Check if the user already exists
     user = User.find_by(email: email)
     if user
       # User already exists, return an error message
-      json_response(code: 400, data: { message: "User with this email already exists" })
+      json_response(code: 400, data: { message: 'User with this email already exists' })
     else
       # Generate a random password for the user
-      password = SecureRandom.base64(12) + "!2"   
+      password = SecureRandom.base64(12) + "!2"
   
       # Create the new user with the reviewer role and the generated password
       user = User.new(name: name, email: email, role: role, password: password, gh_username: gh_username)
