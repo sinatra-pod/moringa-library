@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Footer = (): JSX.Element => {
     return (
-        <div className={'bg-[#4958A908] py-4 px-4 flex flex-row items-center fixed inset-x-0 bottom-0'}>
+        <div className={'bg-[#E7E7EC] py-4 px-4 flex flex-row items-center fixed inset-x-0 bottom-0 z-50'}>
             <FooterLink title={'About'} link={'/about'}/>
             <FooterDivider/>
             <FooterLink title={'Terms'} link={'/terms'}/>

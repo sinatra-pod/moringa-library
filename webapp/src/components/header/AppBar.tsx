@@ -30,7 +30,7 @@ const AppBar = (): JSX.Element => {
 
     return (
         <div className={'static'}>
-            <div className={'flex flex-row justify-between bg-[#4958A9] py-4 px-4'}>
+            <div className={'flex flex-row justify-between bg-primary py-4 px-4'}>
 
                 <div className={'flex flex-row items-center justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
@@ -38,7 +38,7 @@ const AppBar = (): JSX.Element => {
                     <NavItem title={'EXPLORE'} link={'/'} />
                 </div>
 
-                <Link to={'/'} className={'text-white bg-[#B71B3D] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
+                <Link to={'/addproject'} className={'text-white bg-tertiary p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
                     <span className={'material-icons text-white mr-1 font-medium'}>add</span>SUBMIT A PROJECT
                 </Link>
             </div>

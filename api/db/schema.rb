@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_153523) do
   create_table "projects", force: :cascade do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.integer "submission_status", null: false
+    t.integer "submission_status", default: 0, null: false
     t.integer "primary_tech_stack", null: false
     t.string "banner_img", null: false
     t.string "categories", null: false

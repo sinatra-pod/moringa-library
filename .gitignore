@@ -3,8 +3,16 @@
 /api/*.env
 /webapp/*.env
 
+.idea/
+/api/*.env
+/webapp/*.env
+
 /.env
 .env/
 ./api/.env
+
+./idea
+
+.idea/
 
 ./idea
