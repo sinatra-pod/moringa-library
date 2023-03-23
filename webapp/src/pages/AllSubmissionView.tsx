@@ -1,7 +1,14 @@
 import React from 'react'
 import AppBar from '../components/header/AppBar'
+import {useState} from "react";
+
+
+
 
 function AllSubmissionView() {
+
+
+    const projects = [1,1,1,1,1,1,1]
   return (
     <div>
         <AppBar/>
@@ -209,24 +216,19 @@ function AllSubmissionView() {
 
                 {/* <input type="text" placeholder="Search..." /> */}
                 <form className="flex items-center rounded-full ml-10">
-                    <input
+                    <div className="px-80 py-2 shadow-sm rounded-full border-2 border-black rounded-[35px] flex-row items-center">
+                        <span className='material-symbols-outlined material-icons'>
+                            search
+                        </span>
+                        <input
                         type="text"
                         placeholder="Search Project"
-                        className="px-80 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent rounded-full"
-                        // value={query}
-                        // onChange={(event) => setQuery(event.target.value)}
-                    />
+                        
+                        />
 
+                    </div>
+                    
 
-
-
-
-
-
-
-                    {/* <button type="submit" className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-full">
-                        Search
-                    </button> */}
                 </form>
                    {/* Search section  */}
                    {/* <form>   
@@ -243,56 +245,26 @@ function AllSubmissionView() {
 
                 </header>
                 <main className='p-4 bg-white rounded'>
+
+
                 {/* <!-- Main content here --> */}
                 <div className="grid grid-cols-3 gap-4 bg-white rounded">
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-[#B71B3D] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded rounded-full">More</button>
-                        </div>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
-                        </div>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
-                        </div>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
-                        </div>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
-                        </div>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg">
-                        <img className='rounded-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
-                        The Force
-                        <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
-                        <div>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-2 rounded">View</button>
-                        </div>
-                    </div>
+                    {projects.map(x=> (
+                         <div className="bg-white rounded-lg bg-white border border-gray-200 rounded-lg shadow sm:pb-8 dark:bg-gray-800 dark:border-gray-700">
+                         <img className='rounded-t-lg' src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?size=626&ext=jpg" alt="vrproject" />
+                         <div className='p-4'>
+                                 <h4><em>The Force</em></h4>
+                                 <p>The force is here. A web application for Star Wars fans; get information about all the films in the franchise.</p>
+                                 <div>
+                                     <button className="bg-[#B71B3D] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded rounded-full float-right">More</button>
+                                 </div>
+                         </div>
+                         
+                     </div>
+
+                    ))}
+                   
+                    
                 </div>
                 </main>
             </div>
@@ -302,3 +274,7 @@ function AllSubmissionView() {
 }
 
 export default AllSubmissionView
+
+function classNames(arg0: string, arg1: string): string | undefined {
+    throw new Error('Function not implemented.');
+}
