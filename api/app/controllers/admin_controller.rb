@@ -57,9 +57,10 @@ class AdminController < BaseController
   end
 
   def json_params
-    begin
-      JSON.parse(request.body.read)
-    rescue StandardError
+    request_body = request.body.read
+    if request_body.valid_json?
+      JSON.parse(request_body)
+    else
       halt 400, { message: 'Invalid JSON' }.to_json
     end
   end
