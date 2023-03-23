@@ -23,7 +23,7 @@ class AdminController < BaseController
       json_response(code: 400, data: { message: 'User with this email already exists' })
     else
       # Generate a random password for the user
-      password = SecureRandom.base64(12) + "!2"
+      password = "#{SecureRandom.base64(12)} !2"
 
       # Create the new user with the reviewer role and the generated password
       user = User.new(name: name, email: email, role: role, password: password, gh_username: gh_username)
@@ -57,8 +57,10 @@ class AdminController < BaseController
   end
 
   def json_params
+    begin
       JSON.parse(request.body.read)
     rescue StandardError
       halt 400, { message: 'Invalid JSON' }.to_json
+    end
   end
 end
