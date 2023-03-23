@@ -1,6 +1,5 @@
 import React from 'react'
 import AppBar from '../components/header/AppBar'
-import {useState} from "react";
 
 
 
@@ -109,7 +108,3 @@ function AllSubmissionView() {
 }
 
 export default AllSubmissionView
-
-function classNames(arg0: string, arg1: string): string | undefined {
-    throw new Error('Function not implemented.');
-}
