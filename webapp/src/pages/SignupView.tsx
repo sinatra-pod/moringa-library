@@ -24,17 +24,17 @@ function SignupView() {
     setPassword(event.target.value)
   }
   function submitData(data:any){
-    // fetch("http://localhost:9292/users",{
-    //     method:"POST",
-    //     mode:"cors",
-    //     body:JSON.stringify({
-    //         email:email,
-    //         password:password
-    //     }),
-    //     headers:{
-    //         "Content-type":"application/json"
-    //     }
-    // })
+    fetch("http://localhost/register",{
+        method:"POST",
+        mode:"cors",
+        body:JSON.stringify({
+            email:email,
+            password:password
+        }),
+        headers:{
+            "Content-type":"application/json"
+        }
+    })
     console.log(data)
   }
 
