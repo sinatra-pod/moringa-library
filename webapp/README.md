@@ -32,13 +32,9 @@ This section will guide you through setting up and running this repository on yo
 * To run the front-end part first ensure that you run 
   ```
   npm install 
-
-  ```
 * To start the application run
   ```
   npm start
-
-  ```
 Meta
 ----
 Authors:
