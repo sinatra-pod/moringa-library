@@ -10,7 +10,7 @@ function App() {
       <Route path="/" element={<HomeView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<RegisterView />} />
-      <Route path="/all" element={<AllSubmissionView />} />
+      <Route path="/explore" element={<AllSubmissionView />} />
     </Routes>
   );
 }
