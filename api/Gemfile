@@ -12,7 +12,7 @@ gem 'activerecord', '~> 7.0', '>= 7.0.4.2'
 
 gem 'rake', '~> 13.0', '>= 13.0.6'
 
-gem 'pg', '~> 1.4', '>= 1.4.6'
+gem 'pg', '~> 1.4.6', '>= 1.4.6'
 
 gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.26'
 
@@ -22,7 +22,12 @@ gem 'puma', '~> 6.1'
 
 gem 'require_all', '~> 3.0'
 
+gem "jwt", "~> 2.2"
+
 gem 'rubocop', '~> 1.46', require: false
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f' 
+
 
 group :development do
   gem 'faker'
@@ -32,6 +37,11 @@ end
 
 group :test do
   gem 'rack-test', '~> 2.0', '>= 2.0.2'
+  gem 'rack-cors'
   gem 'rspec', '~> 3.12'
   gem 'sqlite3', '~> 1.6', '>= 1.6.1'
 end
+
+gem "dotenv-rails"
+
+
