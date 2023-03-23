@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#include SendGrid
+# include SendGrid
 
 # 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
 # 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
