@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react';
-import useHeader from "../hooks/useHeader";
 import logo from "../assets/logo.png"
 import {MdOutlineEmail, MdLockOutline} from 'react-icons/md'
+import {Link} from "react-router-dom";
+
 
 function LoginView() {
     const [email,setEmail]=useState("")
@@ -53,8 +54,10 @@ function LoginView() {
                             <MdLockOutline style={{ fontSize: '25 '}}/>
                         </div>
                         <div className="flex justify-center items-center m-5">
-                            <button className="flex-shrink-0 bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-xl font-medium" type="submit" onClick={handleSubmit}>Sign Up </button>
-
+                            {/* <button className="flex-shrink-0 bg-gray-900 hover:bg-gray-700 border-gray-900 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded-xl font-medium" type="submit" onClick={handleSubmit}>Sign Up </button> */}
+                            <Link to={'/'} className={'text-white bg-[#2B3467] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg w-32'}>
+                                <p className='ml-6'>Sign In</p> 
+                            </Link>
                         </div>
                         <div className="socials flex flex-row divide-x">
                             <button></button>
