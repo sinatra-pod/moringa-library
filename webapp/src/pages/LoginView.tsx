@@ -33,7 +33,7 @@ function LoginView() {
             <section className="signcard flex flex-col md:flex-row box-border border-1 border-gray rounded-xl h-[80%] w-[80%] justify-center items-center shadow-2xl">
                 <div className='logopart bg-gray-900 dark:bg-gray-900 h-full w-full basis-1/2 text-white-200 flex flex-col md:flex-row items-center justify-center'>
                     <div className="imagepart basis-1/2 flex justify-end items-end ">
-                        {/* <img className="object-contain h-48 w-96  rounded-tl-xl" src={logo} alt="logo"/> */}
+                        <img className="object-contain h-48 w-96  rounded-tl-xl" src={logo} alt="logo"/>
                     </div>
                     <div className="basis-1/2 flex flex-col justify-start items-start">
                         <h1 className='text-gray-500 text-5xl p-3 font-medium'>MORINGA</h1>
