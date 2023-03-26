@@ -1,4 +1,7 @@
 /.idea
+<<<<<<< HEAD
+.env
+=======
 .idea/
 /api/*.env
 /webapp/*.env
@@ -8,3 +11,4 @@
 ./api/.env
 
 ./idea
+>>>>>>> e7bee92a7f76d8ea898371ff14da305c05088bb1
