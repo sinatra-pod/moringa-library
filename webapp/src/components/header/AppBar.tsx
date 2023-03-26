@@ -35,7 +35,7 @@ const AppBar = (): JSX.Element => {
                 <div className={'flex flex-row items-center justify-between'}>
                     <NavItem title={'HOME'} link={'/'} />
                     <DropDownMenu onClick={toggleDropdown} title={'TECHNOLOGY'} open={isDropdownOpen} />
-                    <NavItem title={'EXPLORE'} link={'/'} />
+                    <NavItem title={'EXPLORE'} link={'/explore'} />
                 </div>
 
                 <Link to={'/'} className={'text-white bg-[#B71B3D] p-3 items-center flex flex-row rounded-[35px] font-medium   hover:drop-shadow-lg'}>
